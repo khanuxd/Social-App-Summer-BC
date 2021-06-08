@@ -7,26 +7,30 @@ const ProfileSchema = new mongoose.Schema({
   },
   company: {
     type: String,
+    default: '',
   },
   website: {
     type: String,
+    default: '',
   },
   location: {
     type: String,
+    default: '',
   },
   status: {
     type: String,
-    required: true,
+    default: '',
   },
   skills: {
     type: [String],
-    required: true,
   },
   bio: {
     type: String,
+    default: '',
   },
   githubusername: {
     type: String,
+    default: '',
   },
   experience: [
     {

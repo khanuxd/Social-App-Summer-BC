@@ -26,6 +26,7 @@ const PostItem = ({
   comments,
   date,
   toggleComments,
+  photo,
 }) => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
@@ -49,7 +50,14 @@ const PostItem = ({
         </Col>
       </Row>
       <Row className='mt-3'>
-        <Col>Image ?</Col>
+        <Col>
+          {photo && (
+            <Image
+              fluid
+              src={`${process.env.PUBLIC_URL}/assets/images/posts/${photo}`}
+            />
+          )}
+        </Col>
       </Row>
       <Row className='mt-3'>
         <Col className='d-flex align-items-center'>

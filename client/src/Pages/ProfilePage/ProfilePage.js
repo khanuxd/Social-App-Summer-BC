@@ -38,7 +38,7 @@ const ProfilePage = () => {
     };
   }, [dispatch, userId, auth.token]);
 
-  return profileById && currentUserPosts.length > 0 ? (
+  return profileById ? (
     <Fragment>
       <CustomNavbar />
       <ProfileBanner />

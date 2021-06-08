@@ -1,6 +1,8 @@
 import axios from 'axios';
 import setTokenAuth from '../utils/setTokenAuth';
 import { setAlert } from './alert';
+import { clearPosts } from './post';
+import { clearProfile, createAndUpdateProfile } from './profile';
 import {
   LOAD_USER,
   AUTH_ERROR,
@@ -84,10 +86,13 @@ export const register = (formData) => async (dispatch) => {
     });
 
     //alert
-    dispatch(setAlert('User created', 'success'));
+    await dispatch(setAlert('User created', 'success'));
 
     //load User
-    dispatch(loadUser());
+    await dispatch(loadUser());
+
+    //initial user Profile
+    dispatch(createAndUpdateProfile({}));
   } catch (error) {
     const errors = error.response.data.errors;
     if (errors) {
@@ -100,7 +105,9 @@ export const register = (formData) => async (dispatch) => {
 };
 
 //logout
-export const logout = () => (dispatch) => {
+export const logout = () => async (dispatch) => {
   localStorage.setItem('token', null);
-  dispatch({ type: LOGOUT });
+  await dispatch({ type: LOGOUT });
+  await dispatch(clearPosts());
+  dispatch(clearProfile());
 };

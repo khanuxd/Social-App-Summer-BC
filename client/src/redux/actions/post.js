@@ -7,7 +7,7 @@ import {
   GET_USER_POST,
   ADD_COMMENT,
   TOGGLE_COMMENTS,
-  GET_POST_BY_USER_ID,
+  CLEAR_POSTS,
 } from './types';
 
 //Add post
@@ -15,12 +15,11 @@ export const addPost = (formData) => async (dispatch) => {
   try {
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'form-data',
       },
     };
 
-    const body = JSON.stringify(formData);
-    const res = await axios.post('/api/posts/', body, config);
+    const res = await axios.post('/api/posts/', formData, config);
 
     dispatch({ type: ADD_POST, payload: res.data });
   } catch (error) {
@@ -72,6 +71,9 @@ export const getCurrentUserPosts = (userId) => async (dispatch) => {
     });
   }
 };
+
+//clear Posts
+export const clearPosts = () => ({ type: CLEAR_POSTS });
 
 //Add like
 export const addLike = (postId) => async (dispatch) => {

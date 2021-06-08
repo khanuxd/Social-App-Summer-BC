@@ -12,6 +12,7 @@ import heroImage from '../../Assets/bg-img-2.jpg';
 
 const SignUpPage = () => {
   const { isAuthenticated, loading, user } = useSelector((state) => state.auth);
+
   //redirect user to dashboard page if user logged in successfully
   if (isAuthenticated && !loading && user) {
     return <Redirect to='/home' />;

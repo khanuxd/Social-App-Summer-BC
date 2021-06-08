@@ -1,4 +1,5 @@
 import {
+  CLEAR_PROFILE,
   CLEAR_PROFILE_BY_ID,
   GET_PROFILE,
   GET_PROFILE_BY_ID,
@@ -28,6 +29,13 @@ const profileReducer = (state = initialState, action) => {
       return {
         ...state,
         profileById: payload,
+        loading: false,
+      };
+
+    case CLEAR_PROFILE:
+      return {
+        ...state,
+        profile: null,
         loading: false,
       };
 

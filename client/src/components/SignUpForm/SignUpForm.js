@@ -26,6 +26,7 @@ const SignUpForm = () => {
       })}
       onSubmit={(values, { setSubmitting }) => {
         dispatch(register(values));
+
         setSubmitting(false);
       }}
     >

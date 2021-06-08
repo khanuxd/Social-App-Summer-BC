@@ -6,6 +6,8 @@ import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { logout } from '../../redux/actions/auth';
+import { clearProfile } from '../../redux/actions/profile';
+import { clearPosts } from '../../redux/actions/post';
 
 const CustomNavbar = () => {
   const dispatch = useDispatch();

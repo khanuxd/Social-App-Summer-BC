@@ -6,13 +6,17 @@ const Post = require('../../models/Post');
 const User = require('../../models/User');
 const Profie = require('../../models/Profile');
 const auth = require('../../middlewares/auth');
+const {
+  uploadPostImages,
+  resizePostImages,
+} = require('../../middlewares/uploadPhotos');
 
 //@route    POST api/posts
 //@desc     Create a post
 //@access   Private
 router.post(
   '/',
-  [auth, [check('text', 'Text is required').not().isEmpty()]],
+  [auth, uploadPostImages, resizePostImages],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -20,13 +24,18 @@ router.post(
     }
     try {
       const user = await User.findById(req.user.id).select('-password');
+
       const newPost = {
         text: req.body.text,
         name: user.name,
         avatar: user.avatar,
         user: req.user.id,
+        photos: req.body.photos,
       };
+
       const post = new Post(newPost);
+      console.log('new post', newPost);
+      console.log('post', post);
       await post.save();
       res.json(post);
     } catch (error) {

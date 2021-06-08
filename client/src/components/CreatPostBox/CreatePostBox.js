@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Row from 'react-bootstrap/Row';
@@ -7,9 +7,8 @@ import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import { Formik, Field, Form } from 'formik';
-import * as Yup from 'yup';
-import { addPost, getCurrentUserPosts } from '../../redux/actions/post';
-import { getCurrentProfile } from '../../redux/actions/profile';
+import * as yup from 'yup';
+import { addPost } from '../../redux/actions/post';
 
 const CreatePostBox = () => {
   const {
@@ -17,6 +16,34 @@ const CreatePostBox = () => {
   } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
+
+  const [newPost, setNewPost] = useState({
+    text: '',
+    photos: '',
+  });
+
+  const handleChange = (e) => {
+    setNewPost({ ...newPost, [e.target.name]: e.target.value });
+  };
+
+  const handlePhotos = (e) => {
+    setNewPost({ ...newPost, photos: e.target.files });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('text', newPost.text);
+    for (const key of Object.keys(newPost.photos)) {
+      formData.append('photos', newPost.photos[key]);
+    }
+
+    //send form
+    dispatch(addPost(formData));
+    //clear form
+    setNewPost({ text: '', photos: '' });
+  };
 
   return (
     <Card className='shadow-sm p-3'>
@@ -27,35 +54,29 @@ const CreatePostBox = () => {
           </Link>
         </Col>
         <Col xs={10}>
-          <Formik
-            initialValues={{ text: '' }}
-            validationSchema={Yup.object({
-              text: Yup.string().required('Required'),
-            })}
-            onSubmit={async (values, { setSubmitting, resetForm }) => {
-              //create a post
-              await dispatch(addPost(values));
-
-              dispatch(getCurrentUserPosts(_id));
-
-              setSubmitting(false);
-              //clear form
-              resetForm();
-            }}
-          >
-            <Form>
-              <Field
-                name='text'
-                type='text'
-                className='form-control'
-                placeholder="What's in your mind?"
-              />
-
-              <Button type='submit' variant='primary' className='ml-auto'>
-                Create Post
-              </Button>
-            </Form>
-          </Formik>
+          <form onSubmit={handleSubmit} encType='multipart/form-data'>
+            <input
+              className='form-control'
+              type='text'
+              placeholder='What is in your mind?'
+              name='text'
+              value={newPost.text}
+              onChange={handleChange}
+            />
+            <div className='d-flex justify-content-between mt-3'>
+              <label className='photo-input--post'>
+                <input
+                  type='file'
+                  accept='.png, .jpg, .jpeg'
+                  name='photos'
+                  onChange={handlePhotos}
+                  multiple
+                />
+                <i className='fas fa-image'></i> Photo
+              </label>
+              <Button type='submit'>Post</Button>
+            </div>
+          </form>
         </Col>
       </Row>
     </Card>
