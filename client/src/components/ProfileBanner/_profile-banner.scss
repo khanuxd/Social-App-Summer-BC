@@ -1,6 +1,8 @@
+@import "../../styles/variables";
+
 .profile-banner {
   height: 40vh;
-  background-image: url('../../Assets/keyboards.jpg');
+  background-image: url("../../Assets/keyboards.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,7 +12,7 @@
     display: block;
     width: 200px;
     height: 200px;
-    border: 3px solid grey;
+    border: 3px solid $background-color;
     border-radius: 50%;
     position: absolute;
     left: 50%;
@@ -19,8 +21,4 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
-}
-
-.profilepage-content {
-  margin-top: 100px; //half of profile avatar height
 }

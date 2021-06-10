@@ -1,0 +1,16 @@
+@import "../../styles/variables";
+
+.profilepage-content {
+  margin-top: 100px; //half of profile avatar height
+  .pofile-picture {
+    padding: 2rem 0;
+
+    h4 {
+      color: $secondary-color-1;
+    }
+
+    span {
+      color: $paragraph-text;
+    }
+  }
+}

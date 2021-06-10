@@ -1,0 +1,85 @@
+@import "../../styles/variables";
+
+.about-me {
+  a {
+    text-decoration: none;
+    color: $secondary-color-1;
+
+    .about-me-heading {
+      padding: 0 1rem;
+      align-items: center;
+      span {
+        color: #848484;
+        font-size: 0.8rem;
+
+        i {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .profile-bio {
+    background-color: #fafafa;
+    padding: 2rem 1rem;
+    p,
+    span {
+      font-size: 0.85rem;
+      color: $paragraph-text;
+      margin-bottom: 0.5rem;
+      line-height: 1.7rem;
+    }
+    .status {
+      font-weight: 500;
+    }
+  }
+
+  .key-items {
+    color: $paragraph-text;
+    padding: 0 1rem;
+
+    i {
+      color: $secondary-color-1;
+      padding-right: 0.5rem;
+    }
+  }
+
+  .skills-list {
+    background-color: #fafafa;
+    padding: 2rem 1rem;
+
+    .skills-badge {
+      // display: flex;
+      // justify-content: flex-start;
+      // align-items: flex-start;
+      // flex-wrap: wrap;
+
+      .skills-badge-item {
+        color: #3e5568 !important;
+        background-color: #e7f4ff !important;
+        font-weight: 400;
+        padding: 0.3rem;
+        margin: 0.3rem;
+      }
+    }
+  }
+
+  .repos-list {
+    padding: 1rem;
+
+    h5 {
+      color: $secondary-color-1;
+      padding: 1rem 0;
+    }
+
+    .repo-list-item {
+      i {
+        color: $secondary-color-1;
+        padding-right: 0.5rem;
+      }
+      span {
+        color: $paragraph-text;
+      }
+    }
+  }
+}

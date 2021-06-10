@@ -42,7 +42,7 @@ const ProfilePage = () => {
       <CustomNavbar />
       <ProfileBanner />
       <Container className='profilepage-content'>
-        <div className='text-center mb-3'>
+        <div className='text-center mb-3 pofile-picture'>
           <h4>{profileById.user.name}</h4>
           <span>{profileById.status}</span>
         </div>
