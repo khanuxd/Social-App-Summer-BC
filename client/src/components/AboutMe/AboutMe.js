@@ -27,7 +27,7 @@ const AboutMe = ({
   return (
     <Card className='shadow-sm mt-3 p-3'>
       {auth.user._id === user._id ? (
-        <Link to={`/settings/${user._id}`}>
+        <Link to='/setting'>
           <div className='d-flex justify-content-between'>
             <h6>About Me</h6>
             <i className='fas fa-edit'></i>
@@ -80,7 +80,7 @@ const AboutMe = ({
                 target='_blank'
                 rel='noreferrer'
               >
-                githubusername
+                {githubusername}
               </a>
             </small>
           ) : (
