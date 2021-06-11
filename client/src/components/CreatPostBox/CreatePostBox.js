@@ -47,7 +47,7 @@ const CreatePostBox = () => {
   return (
     <Card className='shadow-sm p-3 mb-3 create-post-box'>
       <Row>
-        <Col xs={2} className="post-avatar">
+        <Col xs={2} className='post-avatar'>
           <Link to={`/profile/${_id}`}>
             <div
               style={{
@@ -71,6 +71,7 @@ const CreatePostBox = () => {
               name='text'
               value={newPost.text}
               onChange={handleChange}
+              required
             />
             <div className='d-flex justify-content-between mt-3 create-post-bottom'>
               <label className='photo-input--post'>

@@ -9,7 +9,7 @@ const AllUsers = ({ profiles }) => {
     <Fragment>
       <Card className='p-3 mb-3 single-user-profile'>
         {profiles.map((profile) => (
-          <Link key={profile._id} to={`/profile/${profile.user._id}`}>
+          <Link to={`/profile/${profile.user._id}`} key={profile._id}>
             <Card className='user-profile-card'>
               <Row>
                 <Col sm={3} className='user-avatar'>
