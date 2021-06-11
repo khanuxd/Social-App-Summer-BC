@@ -1,0 +1,16 @@
+@import "../../styles/variables";
+
+.nav-bar-top {
+  .nav-link.active {
+    color: $primary-color !important;
+  }
+  a {
+    text-decoration: none;
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $primary-color !important;
+    text-transform: uppercase;
+  }
+}

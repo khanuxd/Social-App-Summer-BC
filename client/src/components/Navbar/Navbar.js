@@ -16,7 +16,7 @@ const CustomNavbar = () => {
 
   return (
     <Navbar
-      className='shadow'
+      className='shadow nav-bar-top'
       collapseOnSelect
       bg='light'
       expand='sm'
@@ -24,7 +24,7 @@ const CustomNavbar = () => {
     >
       <Container>
         <LinkContainer to='/home'>
-          <Navbar.Brand>DevNet</Navbar.Brand>
+          <Navbar.Brand className="logo">DevNet</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
