@@ -47,7 +47,7 @@ const ProfilePage = () => {
           <span>{profileById.status}</span>
         </div>
         <Row>
-          <Col xs={4}>
+          <Col md={12} lg={4} >
             <UserBox
               user={profileById.user}
               profile={profileById}
@@ -55,7 +55,7 @@ const ProfilePage = () => {
             />
             <AboutMe {...profileById} />
           </Col>
-          <Col xs={8}>
+          <Col md={12} lg={8} >
             {auth.user._id === userId && <CreatePostBox />}
             <Posts posts={currentUserPosts} />
           </Col>

@@ -14,3 +14,32 @@
     }
   }
 }
+
+/* Tablet Support */
+
+@media (max-width: 899px) {
+  .homepage-content {
+    display: flex;
+    flex-direction: column !important;
+
+    .left-sidebar {
+      max-height: 280px;
+      margin-bottom: 2rem !important;
+
+      .single-user-profile {
+        display: none;
+      }
+    }
+  }
+}
+
+/* Tablet Support */
+
+@media (max-width: 899px) {
+  
+}
+
+/* Mobile Support */
+@media (max-width: 576px) {
+  
+}

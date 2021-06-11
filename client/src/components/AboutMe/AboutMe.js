@@ -36,22 +36,12 @@ const AboutMe = ({
       ) : (
         <h6>About Me</h6>
       )}
-      {/* <Row className='mt-3'>
-        <Col>
-          <div className='border-top w-100'></div>
-        </Col>
-      </Row> */}
       <Row className='mt-3 profile-bio'>
         <Col>
           <p>{bio ? bio : 'Say Something About Yourself'}</p> {' - '}
           <span className="status">{status ? status : 'What is your status?'}</span>
         </Col>
       </Row>
-      {/* <Row className='mt-3'>
-        <Col>
-          <div className='border-top w-100'></div>
-        </Col>
-      </Row> */}
       <Row className='mt-3 key-items'>
         <Col>
           <i className='fas fa-map-marker-alt'></i>{' '}
@@ -96,11 +86,6 @@ const AboutMe = ({
           </small>
         </Col>
       </Row>
-      {/* <Row className='mt-3 key-items'>
-        <Col>
-          <div className='border-top w-100'></div>
-        </Col>
-      </Row> */}
       <Row className='mt-3 skills-list'>
         {skills.length === 0 ? (
           <Col>
@@ -119,11 +104,6 @@ const AboutMe = ({
       {profile.repos.length > 0 && (
         <div className="repos-list">
           <Fragment>
-            {/* <Row className='my-3'>
-              <Col>
-                <div className='border-top w-100'></div>
-              </Col>
-            </Row> */}
             <h5>Repos List</h5>
             {profile.repos.map((repo) => (
               <Row key={repo.id} className="repo-list-item">

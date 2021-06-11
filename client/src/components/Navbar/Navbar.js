@@ -19,7 +19,7 @@ const CustomNavbar = () => {
       className='shadow nav-bar-top'
       collapseOnSelect
       bg='light'
-      expand='sm'
+      expand='lg'
       fixed='top'
     >
       <Container>

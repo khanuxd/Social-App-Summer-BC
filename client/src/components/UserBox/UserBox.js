@@ -27,8 +27,8 @@ const UserBox = ({ user = {}, profile = {}, posts = [] }) => {
     <Card className='shadow-sm p-3 mb-3 user-box'>
       <Link to={`/profile/${_id}`}>
         <Card className="user-box-section profile-card">
-          <Row>
-            <Col sm={3}>
+          <Row className="profile-card-area">
+            <Col sm={2} md={6} lg={3} className="prifle-avatar">
               <div
                 style={{
                   backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/posts/${avatar})`,
@@ -42,7 +42,7 @@ const UserBox = ({ user = {}, profile = {}, posts = [] }) => {
               >
               </div>
             </Col>
-            <Col sm={9}>
+            <Col sm={10} md={6} lg={9}>
               <Card.Title>{name}</Card.Title>
               <Card.Text className='text-muted'>{status}</Card.Text>
             </Col>

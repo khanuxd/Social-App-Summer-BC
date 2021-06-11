@@ -66,3 +66,28 @@
     }
   }
 }
+
+/* Tablet Support */
+
+@media (max-width: 899px) {
+  .user-box {
+    // min-height: 350px;
+    .profile-card {
+      .prifle-avatar {
+        // margin-bottom: 2rem;
+      }
+    }
+  }
+}
+/* Mobile Support */
+@media (max-width: 576px) {
+  .user-box {
+    .profile-card {
+      min-width: 311px !important;
+
+      .prifle-avatar {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

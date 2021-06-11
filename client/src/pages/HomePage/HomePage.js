@@ -35,8 +35,8 @@ const HomePage = () => {
     <Fragment>
       <CustomNavbar />
       <Container className='homepage-content'>
-        <Row>
-          <Col xs={4} className='left-sidebar'>
+        <Row className="homepage-conent-area">
+          <Col md={12} lg={4} className='left-sidebar'>
             <UserBox
               user={auth.user}
               profile={profile.profile}
@@ -44,7 +44,7 @@ const HomePage = () => {
             />
             <AllUsers profiles={profile.profiles} />
           </Col>
-          <Col xs={8}>
+          <Col md={12} lg={8} className="right-side-content">
             <CreatePostBox />
             <Posts posts={post.posts} />
           </Col>

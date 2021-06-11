@@ -3,36 +3,79 @@
 .homepage-content {
   margin-top: 6rem;
 
-  .left-sidebar {
-    // height: 90vh;
-    // overflow: hidden;
+  .homepage-conent-area {
+    .left-sidebar {
+      height: 90vh;
+      // position: sticky;
+      // top: 6rem;
+      overflow: hidden;
+      margin-bottom: 6rem;
+      // min-width: 380px;
 
-    .single-user-profile {
-      height: inherit;
-      background-color: #f5f5f5;
-      border: none;
+      .single-user-profile {
+        height: inherit;
+        background-color: #f5f5f5;
+        border: none;
+        overflow: scroll;
 
-      a {
-        text-decoration: none;
-        color: $secondary-color-1;
+        a {
+          text-decoration: none;
+          color: $secondary-color-1;
 
-        .user-profile-card {
-          padding: 1rem;
-          margin-bottom: 0.5rem;
-          border: none;
-          background-color: #fafafa;
+          .user-profile-card {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border: none;
+            background-color: #fafafa;
+            // width: 350px;
 
-          .user-avatar {
-            display: flex;
-            justify-content: center;
-          }
-          .user-info {
-            padding: 0 1rem 0 0;
-            p {
-              margin-bottom: 0;
+            .user-avatar {
+              display: flex;
+              justify-content: center;
+            }
+            .user-info {
+              padding: 0 1rem 0 0;
+              p {
+                margin-bottom: 0;
+              }
             }
           }
         }
+      }
+    }
+
+    .right-side-content {
+      // min-width: 750px;
+    }
+  }
+}
+
+/* Tablet Support */
+
+@media (max-width: 899px) {
+  .homepage-content {
+    display: flex;
+    flex-direction: column !important;
+
+    .left-sidebar {
+      margin-bottom: 0;
+      // margin-bottom: 1rem !important;
+
+      .single-user-profile {
+        display: none;
+      }
+    }
+  }
+}
+
+/* Mobile Support */
+@media (max-width: 576px) {
+  .homepage-content {
+    .left-sidebar {
+      min-height: 360px;
+      margin-bottom: 0;
+      .single-user-profile {
+        display: none;
       }
     }
   }

@@ -83,3 +83,15 @@
     }
   }
 }
+
+/* Tablet Support */
+
+@media (max-width: 899px) {
+  .about-me {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Mobile Support */
+@media (max-width: 576px) {
+}
