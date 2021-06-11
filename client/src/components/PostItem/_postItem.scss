@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .post-item-container {
   padding: 2rem !important;
 
@@ -7,10 +9,8 @@
       img {
         width: 3rem;
         height: 3rem;
-        // border-radius: 50%;
-        // border: 1px solid rgb(202, 202, 202);
         -o-object-fit: cover;
-           object-fit: cover;
+        object-fit: cover;
       }
     }
 
@@ -25,6 +25,7 @@
       position: absolute;
       right: 3rem;
       cursor: pointer;
+      color: $paragraph-text;
     }
 
     .post-name {
@@ -54,21 +55,21 @@
       display: flex;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
-          -ms-flex-flow: row wrap;
-              flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
       -ms-flex-line-pack: start;
-          align-content: flex-start;
+      align-content: flex-start;
       -webkit-box-align: stretch;
-          -ms-flex-align: stretch;
-              align-items: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
       width: 100%;
       margin: auto;
 
       .post-gallery-item {
         height: 300px;
         -webkit-box-flex: 1;
-            -ms-flex: 1 1 auto;
-                flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
         margin: 0.3em;
         position: relative;
         overflow: hidden;
@@ -76,7 +77,7 @@
           height: 100%;
           width: 100%;
           -o-object-fit: cover;
-             object-fit: cover;
+          object-fit: cover;
         }
       }
     }
@@ -84,8 +85,8 @@
 
   .post-action-summary {
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     font-size: 0.85rem;
     padding: 1rem 0;
     color: rgba(102, 102, 102, 0.75);

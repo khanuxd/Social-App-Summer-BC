@@ -144,7 +144,7 @@ const ExperienceForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
-      <Button type='submit' value='Send data'>
+      <Button className="form-submit" type='submit' value='Send data'>
         Save
       </Button>
     </Form>

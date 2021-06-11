@@ -84,7 +84,7 @@ const AccountForm = () => {
         Joined At: <Moment format='MMMM, DD, YYYY'>{formData.date}</Moment>
       </Form.Group>
 
-      <Button type='submit'>Save</Button>
+      <Button className="form-submit" type='submit'>Save</Button>
     </Form>
   );
 };

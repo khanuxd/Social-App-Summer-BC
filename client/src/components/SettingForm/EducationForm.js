@@ -143,7 +143,7 @@ const EducationForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
-      <Button type='submit'>Save</Button>
+      <Button className="form-submit" type='submit'>Save</Button>
     </Form>
   );
 };

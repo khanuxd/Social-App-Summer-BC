@@ -20,46 +20,42 @@ const Setting = () => {
 
       <Container className='setting-area'>
         <Alert />
-        <Row className='px-5'>
+        <Row className="setting-area-form">
           <Tab.Container defaultActiveKey='personalInfo'>
-            <Row>
-              <Col xs={4}>
-                <div className='setting-section'>
-                  <Nav variant='pills' className='flex-column'>
-                    <Nav.Item>
-                      <Nav.Link eventKey='personalInfo'>
-                        Personal Information
+            <Col xs={4} className='setting-section'>
+              <Nav variant='pills' className='flex-column'>
+                <Nav.Item>
+                  <Nav.Link eventKey='personalInfo'>
+                    Personal Information
                       </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey='education'>Education</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey='experience'>Experience</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey='account'>Account Details</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                </div>
-              </Col>
-              <Col xs={8}>
-                <Tab.Content className='form-area'>
-                  <Tab.Pane eventKey='personalInfo'>
-                    <PersonalInfoForm />
-                  </Tab.Pane>
-                  <Tab.Pane eventKey='education'>
-                    <EducationForm />
-                  </Tab.Pane>
-                  <Tab.Pane eventKey='experience'>
-                    <ExperienceForm />
-                  </Tab.Pane>
-                  <Tab.Pane eventKey='account'>
-                    <AcccountForm />
-                  </Tab.Pane>
-                </Tab.Content>
-              </Col>
-            </Row>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey='education'>Education</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey='experience'>Experience</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey='account'>Account Details</Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Col>
+            <Col xs={8} className="form-section-tab">
+              <Tab.Content>
+                <Tab.Pane eventKey='personalInfo'>
+                  <PersonalInfoForm />
+                </Tab.Pane>
+                <Tab.Pane eventKey='education'>
+                  <EducationForm />
+                </Tab.Pane>
+                <Tab.Pane eventKey='experience'>
+                  <ExperienceForm />
+                </Tab.Pane>
+                <Tab.Pane eventKey='account'>
+                  <AcccountForm />
+                </Tab.Pane>
+              </Tab.Content>
+            </Col>
           </Tab.Container>
         </Row>
       </Container>

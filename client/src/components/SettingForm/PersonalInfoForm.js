@@ -97,7 +97,7 @@ const PersonalInfoForm = () => {
     >
       <h3>Personal Information</h3>
 
-      <Form.Group>
+      <Form.Group className='form-sub-section'>
         <Form.Label htmlFor='bio'>About</Form.Label>
         <Form.Control
           as='textarea'
@@ -110,7 +110,7 @@ const PersonalInfoForm = () => {
           value={formData.bio}
         />
       </Form.Group>
-      <Form.Group controlId='formFile' className='form-section'>
+      <Form.Group controlId='formFile' className='form-sub-section'>
         <Form.Label>Upload or Update An Profile Banner</Form.Label>
         <Form.Control type='file' name='avatar' onChange={handlePhoto} />
         {profile && profile.avatar && (
@@ -120,7 +120,7 @@ const PersonalInfoForm = () => {
           />
         )}
       </Form.Group>
-      <Form.Group>
+      <Form.Group className='form-sub-section'>
         <Form.Label htmlFor='status'>Role</Form.Label>
         <Form.Control
           id='status'
@@ -131,7 +131,7 @@ const PersonalInfoForm = () => {
           value={formData.status}
         />
       </Form.Group>
-      <Form.Group>
+      <Form.Group className='form-sub-section'>
         <Form.Label htmlFor='skills'>Skills *</Form.Label>
         <Form.Control
           id='skills'
@@ -143,7 +143,7 @@ const PersonalInfoForm = () => {
           value={formData.skills}
         />
       </Form.Group>
-      <Form.Group className='combined-field'>
+      <Form.Group className='form-sub-section'>
         <Row>
           <Col>
             <Form.Label htmlFor='company'>Company</Form.Label>
@@ -158,7 +158,7 @@ const PersonalInfoForm = () => {
           </Col>
         </Row>
       </Form.Group>
-      <Form.Group className='combined-field'>
+      <Form.Group className='form-sub-section'>
         <Row>
           <Col>
             <Form.Label htmlFor='location'>Location</Form.Label>
@@ -184,18 +184,34 @@ const PersonalInfoForm = () => {
           </Col>
         </Row>
       </Form.Group>
-      <Form.Group>
-        <Form.Label htmlFor='githubusername'>GitHub Username</Form.Label>
-        <Form.Control
-          id='githubusername'
-          type='text'
-          name='githubusername'
-          placeholder='eg: johndoe123'
-          onChange={handleChange}
-          value={formData.githubusername}
-        />
+      <Form.Group className='form-sub-section'>
+        <Row>
+          <Col>
+            <Form.Label htmlFor='githubusername'>GitHub Username</Form.Label>
+            <Form.Control
+              id='githubusername'
+              type='text'
+              name='githubusername'
+              placeholder='eg: johndoe123'
+              onChange={handleChange}
+              value={formData.githubusername}
+            />
+          </Col>
+          <Col>
+            <Form.Label htmlFor='linkedin'>Linked Account</Form.Label>
+            <Form.Control
+              id='linkedin'
+              type='text'
+              name='linkedin'
+              placeholder='Your linkedin'
+              onChange={handleChange}
+              value={formData.linkedin}
+            />
+          </Col>
+        </Row>
+
       </Form.Group>
-      <Form.Group className='combined-field'>
+      <Form.Group className='form-sub-section'>
         <Row>
           <Col>
             <Form.Label htmlFor='twitter'>Twitter</Form.Label>
@@ -221,18 +237,7 @@ const PersonalInfoForm = () => {
           </Col>
         </Row>
       </Form.Group>
-      <Form.Group>
-        <Form.Label htmlFor='linkedin'>Linked Account</Form.Label>
-        <Form.Control
-          id='linkedin'
-          type='text'
-          name='linkedin'
-          placeholder='Your linkedin'
-          onChange={handleChange}
-          value={formData.linkedin}
-        />
-      </Form.Group>
-      <Form.Group className='combined-field'>
+      <Form.Group className='form-sub-section'>
         <Row>
           <Col>
             <Form.Label htmlFor='facebook'>Facebook</Form.Label>
@@ -258,8 +263,7 @@ const PersonalInfoForm = () => {
           </Col>
         </Row>
       </Form.Group>
-
-      <Button type='submit'>Save</Button>
+      <Button className="form-submit" type='submit'>Save</Button>
     </Form>
   ) : (
     <Spinner />
