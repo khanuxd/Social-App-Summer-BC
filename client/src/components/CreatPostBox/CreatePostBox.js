@@ -84,7 +84,7 @@ const CreatePostBox = () => {
                 />
                 <i className='fas fa-image'></i> Photos
               </label>
-              <Button type='submit'>Create Post</Button>
+              <Button className="create-post-btn" type='submit'>Create Post</Button>
             </div>
           </form>
         </Col>

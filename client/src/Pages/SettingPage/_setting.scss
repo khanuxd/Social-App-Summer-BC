@@ -13,7 +13,7 @@
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    background-color: $secondary-color-1;
+    background-color: $primary-color;
     margin-right: 1rem;
     padding: 1rem;
     -webkit-box-shadow: 0 1px 5px 0 rgba(90, 116, 148, 0.4);
@@ -35,12 +35,13 @@
     }
 
     .active {
-      background-color: #5475908e;
+      background-color: hsla(211, 100%, 70%, 0.2);
     }
   }
 
   .form-submit {
     width: 100%;
     margin-top: 2rem;
+    background-color: $primary-color !important;
   }
 }
