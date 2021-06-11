@@ -73,7 +73,7 @@ const PostItem = ({
       {/* Render post images */}
       {photos.length > 0 && <PhotoGallery photos={photos} />}
 
-      <Row className='mt-3'>
+      <Row className='mt-3 post-action-summary'>
         <Col className='d-flex align-items-center'>
           {/* like and comment rendering */}
           <div className='border-right pr-3'>
@@ -107,11 +107,10 @@ const PostItem = ({
             }}
           >
             <i
-              className={`fas fa-thumbs-up ${
-                likes.filter((like) => like.user === auth.user._id).length > 0
+              className={`fas fa-thumbs-up ${likes.filter((like) => like.user === auth.user._id).length > 0
                   ? 'active'
                   : ''
-              }`}
+                }`}
             ></i>{' '}
             Like
           </div>
