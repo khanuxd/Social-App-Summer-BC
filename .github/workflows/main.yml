@@ -30,11 +30,13 @@ jobs:
         run: echo Hello, world!
 
     # Runs npm install
-      - name: cd client
+      - name: client
         run: cd client
       - name: Install 🏗️
         run: npm install
 
       # Runs a build
+      - name: build client
+        run: cd client
       - name: Build 🏗️
         run: npm run build
